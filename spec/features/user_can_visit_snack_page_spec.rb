@@ -13,6 +13,8 @@ feature 'When a user visits a snack show page' do
     visit(snack_path(yung_snack, snack_title: yung_snack.title))
 
     expect(page).to have_content(yung_snack.title)
+    expect(page).to have_content(yung_snack.price)
+    expect(page).to have_content(yung_snack.machine.location)
 
   end
 end
