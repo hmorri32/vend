@@ -1,5 +1,6 @@
 class SnacksController < ApplicationController
   def show
-    @snack = Snack.find_by(params[:id])
+    @snack = Snack.find(params[:id])
+    @machine_average = @snack.machine.snacks.average(:price)
   end
 end
