@@ -9,7 +9,7 @@ feature 'When a user visits a snack show page' do
   let!(:yung_snack)  { dons.snacks.create(title: 'sah tasty mahn', price: 350) }
   let!(:another)     { dons.snacks.create(title: 'like, a snickers...', price: 2) }
 
-  scenario "They see the name of that snack" do
+  scenario "They see the name of that snack, the price, the machine location, machine contents" do
     visit(snack_path(yung_snack, snack_title: yung_snack.title))
 
     expect(page).to have_content(yung_snack.title)
