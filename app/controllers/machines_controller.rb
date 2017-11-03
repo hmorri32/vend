@@ -4,6 +4,9 @@ class MachinesController < ApplicationController
   end
 
   def show
-    @machine = Machine.find(params[:id])
+    @machine       = Machine.find(params[:id])
+    @yung_snacks   = @machine.snacks
+    @average_price = @yung_snacks.average(:price)
+
   end
 end
